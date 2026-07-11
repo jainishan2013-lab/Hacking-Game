@@ -4,6 +4,9 @@ print("===================================")
 print("        HACKER TERMINAL GAME V2      ")
 print("===================================")
 
+# =========================
+# ACCOUNT SYSTEM
+# =========================
 wrongans = 0
 userpass = input("Login or Create new account: ").lower()
 
@@ -43,6 +46,10 @@ else:
             print("Account created!")
             break
 
+# =========================
+# GAME VARIABLES
+# =========================
+
 money = 0
 de = False
 num123 = 0  # FIX: prevents NameError
@@ -50,6 +57,9 @@ num123 = 0  # FIX: prevents NameError
 print("\nYou are an undercover hacker.")
 print("Make money by hacking systems.\n")
 
+# =========================
+# MAIN LOOP
+# =========================
 
 while True:
     print("==============================")
@@ -98,7 +108,9 @@ while True:
 
     response = input("What do you want to do? ").lower()
 
-
+    # =========================
+    # CALL SYSTEM
+    # =========================
     if response == "call":
         print("\nCalling...\n")
         print("Say your name")
@@ -109,6 +121,7 @@ while True:
 
             num123 = random.randint(1, 5)  # 1-4 normal calls, 5 = suspicious guy event
 
+            # ================= VIRGIN MEDIA =================
             if num123 == 1:
                 print("You are a Virgin Media employee")
 
@@ -139,7 +152,7 @@ while True:
                 else:
                     print("They don't trust your reason")
                     wrongans = wrongans + 1
-
+            # ================= LAWYER =================
             elif num123 == 2:
                 print("You are a fake lawyer and you are going in court")
 
@@ -172,6 +185,8 @@ while True:
                     wrongans = wrongans + 1
                     
 
+
+            # ================= BANKER =================
             elif num123 == 3:
                 print("You are a fake banker")
 
@@ -203,6 +218,8 @@ while True:
                     print("They don't trust your reason")
                     wrongans = wrongans + 1
 
+
+            # ================= ARCHITECT =================
             elif num123 == 4:
                 print("You are an architect")
                 print("Say how their house is weakening")
@@ -251,7 +268,7 @@ while True:
                 else:
                     print("They don't trust your reason")
                     wrongans = wrongans + 1
-
+            # ================= SUSPICIOUS GUY (bounty event) =================
             elif num123 == 5:
                 yesno = random.randint(1, 2)
                 if stars == 1:
@@ -305,7 +322,9 @@ while True:
         else:
             print("They don't trust you")
             wrongans = wrongans + 1
-
+    # =========================
+    # SHOP
+    # =========================
     elif response == "buy":
         print("\n===== SHOP =====")
         print("Double Earnings - $150")
@@ -324,9 +343,15 @@ while True:
             else:
                 print("Cancelled")
 
+    # =========================
+    # BALANCE
+    # =========================
     elif response == "balance":
         print("Money:", money)
 
+    # =========================
+    # QUIT
+    # =========================
     elif response == "quit":
         print("Exiting game...")
         break
