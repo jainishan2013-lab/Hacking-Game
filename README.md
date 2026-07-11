@@ -4,9 +4,9 @@ print("===================================")
 print("        HACKER TERMINAL GAME V2      ")
 print("===================================")
 
-# =========================
-# ACCOUNT SYSTEM
-# =========================
+=========================
+ACCOUNT SYSTEM
+=========================
 wrongans = 0
 userpass = input("Login or Create new account: ").lower()
 
