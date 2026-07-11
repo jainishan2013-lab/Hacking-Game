@@ -1,12 +1,13 @@
+```python
 import random
 stars = 0
 print("===================================")
 print("        HACKER TERMINAL GAME V2      ")
 print("===================================")
 
-=========================
-ACCOUNT SYSTEM
-=========================
+# =========================
+# ACCOUNT SYSTEM
+# =========================
 wrongans = 0
 userpass = input("Login or Create new account: ").lower()
 
@@ -93,7 +94,7 @@ while True:
         moneystar = 0
 
     stars = max(wrongstar, moneystar)
-        
+
     if stars == 1:
         print("Bounty is ★")
     if stars == 2:
@@ -183,8 +184,6 @@ while True:
                 else:
                     print("They don't trust your reason")
                     wrongans = wrongans + 1
-                    
-
 
             # ================= BANKER =================
             elif num123 == 3:
@@ -217,7 +216,6 @@ while True:
                 else:
                     print("They don't trust your reason")
                     wrongans = wrongans + 1
-
 
             # ================= ARCHITECT =================
             elif num123 == 4:
@@ -283,77 +281,3 @@ while True:
                     question1 = input("Mind if I ask you a few questions? ").lower()
                     if "yes" in question1 or "sure" in question1:
                         pass
-                    else:
-                        print("Dialing police")
-                        stars += 1
-                        wrongans += 1
-
-                    qbounty1 = input("Why are you calling me out of nowhere? ").lower()
-                    if "verify" in qbounty1 or "code" in qbounty1 or "digital" in qbounty1 or "vistual" in qbounty1:
-                        print("Oh... I see.")
-                        bountystar12 = input("How did you get my phone number? ").lower()
-                        bountystar13 = ""
-                        if "company" in bountystar12 or "database" in bountystar12 or "business" in bountystar12:
-                            print("I see, understood.")
-
-                            bountystar13 = input("What if I don't give you my verification code? ").lower()
-                        if "have" in bountystar13 or "to" in bountystar13 or "dont" in bountystar13:
-                            if yesno == 1:
-                                print("Okay.")
-
-                        else:
-                            print("Nice talking to you.")
-
-                        bountystar14 = input("Why do you need my verification code? ").lower()
-                        if "account" in bountystar14 or "owner" in bountystar14 or "confirm" in bountystar14:
-                            print("Okay, I trust you.")
-                            code = random.randint(100000, 999999)
-                            print("Access code:", code)
-                            entered = input("Enter code: ")
-                            if entered == str(code):
-                                print("Hack successful!")
-                                money += 600 if de else 300
-                    else:
-                        print("They didn't ask about a verification code.")
-                else:
-                    print("They don't trust you")
-                    wrongans = wrongans + 1
-
-        else:
-            print("They don't trust you")
-            wrongans = wrongans + 1
-    # =========================
-    # SHOP
-    # =========================
-    elif response == "buy":
-        print("\n===== SHOP =====")
-        print("Double Earnings - $150")
-
-        if de:
-            print("Already owned")
-        elif money < 150:
-            print("Not enough money")
-        else:
-            choice = input("BUY or PASS: ").lower()
-
-            if choice == "buy":
-                money -= 150
-                de = True
-                print("Double earnings activated!")
-            else:
-                print("Cancelled")
-
-    # =========================
-    # BALANCE
-    # =========================
-    elif response == "balance":
-        print("Money:", money)
-
-    # =========================
-    # QUIT
-    # =========================
-    elif response == "quit":
-        print("Exiting game...")
-        break
-    else:
-        print("Invalid option")
